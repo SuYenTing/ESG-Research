@@ -94,17 +94,6 @@ load("stateInfoData.Rdata")
 load("bigQueryData.Rdata")
 
 
-# ########## 檢查資料 ##########
-# # # 確認bigQueryData的州別都有對應到wiki的州別資訊
-# bigQueryStateList <- unique(bigQueryData$state)
-# stateInfoDataList <- unique(stateInfoData$fullName)
-# bigQueryStateList[which(!(bigQueryStateList %in% stateInfoDataList))]
-# stateInfoDataList[which(!(stateInfoDataList %in% bigQueryStateList))]
-
-# # 檢查災害發生型態
-# sort(unique(bigQueryData$event_type))
-
-
 ########## 整理事件對應鍵值 ##########
 # 篩選事件範圍
 eventData <- eventData %>% filter(beginDate >= "2020-01-01")
